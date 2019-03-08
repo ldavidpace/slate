@@ -542,6 +542,11 @@ function getDirtyPaths(operation) {
           parentPath = PathUtils.increment(parentPath, 1, newPath.size - 1)
         }
       }
+      
+      if (PathUtils.isAbove(newPath, path)) {
+        parentPath = PathUtils.increment(parentPath, 1, newPath.size - 1);
+      }
+
 
       const oldAncestors = PathUtils.getAncestors(parentPath).toArray()
       const newAncestors = PathUtils.getAncestors(newParentPath).toArray()
